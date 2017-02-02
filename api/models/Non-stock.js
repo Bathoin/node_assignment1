@@ -9,26 +9,26 @@ module.exports = {
 
   attributes: {
     Symbol:{
-      type:'string'
+      type:'string',
       required: 'true'
     },
 
   Name:{
-      type'string'
+      type:'string',
     required:'true'
         },
 
   Share_amount:{
-      type:'integer'
+      type:'integer',
       required:'true'
                 },
 
   Purchase_price:{
-      type:'string'
+      type:'string',
       required:'true'
                   },
   Date_of_purchase:{
-      type:'date'
+      type:'date',
       required:'true'
                   },
   }

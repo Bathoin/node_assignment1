@@ -19,17 +19,17 @@ module.exports = {
     },
 
     City:{
-      type:'text'
+      type:'text',
       required:'true'
     },
 
     State:{
-      type:'text'
+      type:'text',
       required:'true'
     },
 
     Zipcode:{
-      type:'string'
+      type:'string',
       required:'true'
     },
 
@@ -39,12 +39,12 @@ module.exports = {
     },
 
     Phone:{
-      type: 'string'
+      type: 'string',
       required: 'true'
     },
 
     Cell:{
-      type:'string'
+      type:'string',
       required:'false'
     }
 

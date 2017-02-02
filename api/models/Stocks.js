@@ -9,32 +9,32 @@ module.exports = {
 
   attributes: {
   Category:{
-    type:'String'
+    type:'String',
     required:'true'
   },
 
     Description:{
-    type: 'text'
+    type: 'text',
       required:'false'
     },
 
     Acquired_value:{
-    type: 'string'
+    type: 'string',
       required:'true'
     },
 
     Acquired_date:{
-    type'date'
+    type:'date',
       required:'true'
     },
 
     Recent_value:{
-    type:'string'
-      required'true'
+    type:'string',
+      required:'true'
     },
 
     Recent_date:{
-    type:'date'
+    type:'date',
       required:'true'
     }
 
