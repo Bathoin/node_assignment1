@@ -24,13 +24,13 @@ module.exports = {
                 },
 
   Purchase_price:{
-      type:'string',
-      required:'true'
+      type:'string'
                   },
+
   Date_of_purchase:{
       type:'date',
       required:'true'
-                  },
+                  }
   }
 };
 

@@ -10,42 +10,38 @@ module.exports = {
   attributes: {
     name:{
     type: 'string',
-      required: 'true'
+      required: true
     },
 
     Address:{
-      type: 'string',
-      required: 'true'
+      type: 'string'
     },
 
     City:{
-      type:'text',
-      required:'true'
+      type: 'string'
     },
 
     State:{
-      type:'text',
-      required:'true'
+      type: 'string'
     },
 
     Zipcode:{
-      type:'string',
-      required:'true'
+      type: 'string'
     },
 
     email:{
       type: 'string',
-      required: 'false'
+      email: true
     },
 
     Phone:{
-      type: 'string',
-      required: 'true'
+      type: 'integer',
+      Phone: true
     },
 
     Cell:{
-      type:'string',
-      required:'false'
+      type: 'integer',
+      Cell: true
     }
 
   }
