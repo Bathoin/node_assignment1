@@ -14,15 +14,18 @@ module.exports = {
     },
 
     Address:{
-      type: 'string'
+      type: 'string',
+      required: true
     },
 
     City:{
-      type: 'string'
+      type: 'string',
+      required: true
     },
 
     State:{
-      type: 'string'
+      type: 'string',
+      required: true
     },
 
     Zipcode:{
@@ -35,13 +38,13 @@ module.exports = {
     },
 
     Phone:{
-      type: 'integer',
-      Phone: true
+      type: 'string',
+      defaultsTo: '111-222-3333'
     },
 
     Cell:{
-      type: 'integer',
-      Cell: true
+      type: 'string',
+      defaultsTo: '111-222-3333'
     }
 
   }
