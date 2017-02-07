@@ -1,5 +1,5 @@
 /**
- * Created by Bathoin on 2/5/2017.
+ * Created by Jason Nguyen on 2/5/2017.
  */
 module.exports = {
 
@@ -15,13 +15,13 @@ module.exports = {
     },
 
     Share_amount:{
-      type:'number'
+      type:'string'
 
     },
 
-    Purchase_price: {
-      type: 'string',
-      defaultsTo: '.01'
+    price:{
+      type:'string'
+
     },
     Date_of_purchase:{
       type:'string',
