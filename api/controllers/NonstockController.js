@@ -24,7 +24,18 @@ module.exports = {
         Nonstock: Nonstock
       });
     });
-  }
+  },
 
+  index:function(req,res,next){
+    Nonstock.find(function foundNonstock(err, Nonstock){
+      if (err) return next(err);
+
+      res.view({
+        Nonstock: Nonstock
+
+      });
+    });
+
+  }
 
 };

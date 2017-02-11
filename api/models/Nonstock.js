@@ -1,31 +1,37 @@
 /**
- * Created by Jason Nguyen on 2/5/2017.
+ * Created by Bathoin on 2/10/2017.
  */
 module.exports = {
 
   attributes: {
-    Symbol:{
+    Category:{
+      type:'String'
+
+    },
+
+    Description:{
+      type: 'text'
+    },
+
+    Avalue:{
+      type: 'string'
+
+    },
+
+    Adate:{
       type:'string'
 
     },
 
-    Name:{
-      type:'string',
-      required: 'true'
-    },
-
-    Share_amount:{
+    Recent_value:{
       type:'string'
 
     },
 
-    price:{
+    Recent_date:{
       type:'string'
 
-    },
-    Date_of_purchase:{
-      type:'string',
-      defaultsTo: '1-1-2000'
     }
+
   }
 };

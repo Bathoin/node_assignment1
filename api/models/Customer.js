@@ -42,7 +42,7 @@ module.exports = {
       defaultsTo: '111-222-3333'
     },
 
-    Cell:{
+    Cellphone:{
       type: 'string',
       defaultsTo: '111-222-3333'
     }

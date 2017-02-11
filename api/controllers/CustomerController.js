@@ -3,13 +3,13 @@
  */
 module.exports = {
 
-  'new':function(req, res) {
+  'new': function(req, res) {
     res.view();
 
   },
 
   create: function(req, res, next) {
-    Customer.create(req.params.all(), function customerCreated(err, customer) {
+    Customer.create( req.params.all(), function customerCreated(err, customer) {
       if (err) return next(err);
 
       res.redirect('/customer/show/' + customer.id);
@@ -22,6 +22,15 @@ module.exports = {
       if (!customer) return next();
       res.view({
         customer: customer
+      });
+    });
+  },
+
+  index: function(req, res, next) {
+    Customer.find(function foundCustomers (err, customers) {
+      if (err) return next(err);
+      res.view({
+        customers: customers
       });
     });
   }

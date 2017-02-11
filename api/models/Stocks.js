@@ -1,42 +1,31 @@
 /**
- * Stocks.js
- *
- * @description :: TODO: You might write a short summary of how this model works and what it represents here.
- * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
+ * Created by Bathoin on 2/10/2017.
  */
-
 module.exports = {
 
   attributes: {
-  Category:{
-    type:'String'
-
-  },
-
-    Description:{
-    type: 'text'
-    },
-
-    Avalue:{
-    type: 'string'
+    Symbol:{
+      type:'string'
 
     },
 
-    Adate:{
-    type:'string'
+    Name:{
+      type:'string',
+      required: 'true'
+    },
+
+    Share_amount:{
+      type:'string'
 
     },
 
-    Recent_value:{
-    type:'string'
+    price:{
+      type:'string'
 
     },
-
-    Recent_date:{
-    type:'string'
-
+    Date_of_purchase:{
+      type:'string',
+      defaultsTo: '1-1-2000'
     }
-
   }
 };
-
