@@ -3,16 +3,21 @@
  */
 module.exports = {
 
-  'new':function(req, res) {
-    res.view();
-
+  'new':function(req, res, err) {
+    Customer.findOne(req.param('owner'), function foundCustomer (err, customer) {
+      if (err) return next (err);
+      if (!customer) return next();
+      res.view({
+        customer: customer
+      });
+    });
   },
 
   create: function(req, res, next) {
     Stocks.create(req.params.all(), function StocksCreated(err, Stocks) {
       if (err) return next(err);
-
-      res.redirect('/Stocks/show/' + Stocks.id);
+      res.json(Stocks); // forward slash out if not needed
+      //res.redirect('/Stocks/show/' + Stocks.id);
     });
   },
 

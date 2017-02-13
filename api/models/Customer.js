@@ -45,6 +45,11 @@ module.exports = {
     Cellphone:{
       type: 'string',
       defaultsTo: '111-222-3333'
+    },
+
+    Stocks: {
+      collection: 'Stocks',
+      via: 'owner'
     }
 
   }

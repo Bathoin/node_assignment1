@@ -30,7 +30,11 @@ module.exports = {
 
     Recent_date:{
       type:'string'
+    },
 
+    owner: {
+      model: 'Customer',
+      required: true
     }
 
   }

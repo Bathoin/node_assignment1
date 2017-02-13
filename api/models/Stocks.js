@@ -15,10 +15,9 @@ module.exports = {
     },
 
     Share_amount:{
-      type:'string'
-
+      type:'float',
+      required: true
     },
-
     price:{
       type:'string'
 
@@ -26,6 +25,10 @@ module.exports = {
     Date_of_purchase:{
       type:'string',
       defaultsTo: '1-1-2000'
+    },
+    owner: {
+      model: 'Customer',
+      required: true
     }
   }
 };
