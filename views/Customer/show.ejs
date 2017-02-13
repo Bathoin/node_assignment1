@@ -7,3 +7,7 @@
 <h3>Email: <%= customer.email%></h3>
 <h3>Phone Number: <%= customer.Phone%></h3>
 <h3>Cellphone: <%= customer.Cellphone%></h3>
+<form action="/Stock/new" method="Post" >
+  <input type="hidden" value="<%= customer.id %>" name="owner">
+  <input type="submit" value="Add Stock" />
+</form>

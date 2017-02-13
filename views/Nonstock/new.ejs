@@ -1,10 +1,14 @@
 <form action="/Nonstock/create" method= "POST">
-  <h2>Create a Non-Stock Portfolio</h2>
+  <h2>Create a Non-Stock Portfolio for <%= customer.name %></h2>
+  <input type="hidden" name="owner" value="<%- customer.id%>" />
+  <input type="text" placeholder="Category" name="Category" ><br />
+  <input type="text" placeholder="Description" name="Description" ><br />
+  <input type="number" placeholder="Aquired Value" name="Avalue" /> <br />
+  <input type="number" placeholder="Aquired Date" name="Adate" /> <br />
+  <input type="number" placeholder="Recent Value" name="Recent_value" /> <br />
+  <input type="number" placeholder="Recent Date" name="Recent_date" /> <br />
 
-  <input type="text" placeholder="Symbol" name="Symbol" ><br />
-  <input type="text" placeholder="Name" name="Name" ><br />
-  <input type="number" placeholder="Share Amount" name="Share_amount" /> <br />
-  <input type="number" placeholder="Purchase Price" name="price" /> <br />
-  <input type="number" placeholder="Date of Purchase" name="Date_of_purchase" /> <br />
   <input type="submit" value="Create New Non Stock Portfolio" /> <br />
+
+
 </form>
