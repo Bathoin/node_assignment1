@@ -1,0 +1,12 @@
+<form action="/Nonstock/update/<%= Nonstock.id %>" method= "POST">
+  <h2>Edit a Non-stock investment</h2>
+
+  <input value="<%= Nonstock.Category %>" type="text" name="Category" ><br />
+  <input value="<%= Nonstock.Description %>" type="text" name="Description" ><br />
+  <input value="<%= Nonstock.Avalue %>" type="text" name="Avalue" ><br />
+  <input value="<%= Nonstock.Adate %>" type="text" name="Adate" ><br />
+  <input value="<%= Nonstock.Recent_value %>" type="text" name="Recent_value" ><br />
+  <input value="<%= Nonstock.Recent_date %>" type="text" name="Recent_date" ><br />
+
+  <input type="submit" value="Edit Nonstock" /> <br />
+</form>

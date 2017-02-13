@@ -1,0 +1,13 @@
+<form action="/Customer/update/<%= customer.id %>" method= "POST">
+  <h2>Edit a Customer</h2>
+
+  <input value="<%= customer.name %>" type="text" name="name" ><br />
+  <input value="<%= customer.Address %>" type="text" name="Address" ><br />
+  <input value="<%= customer.City %>" type="text" name="City" ><br />
+  <input value="<%= customer.State %>" type="text" name="State" ><br />
+  <input value="<%= customer.Zipcode %>" type="number" name="Zipcode" ><br />
+  <input value="<%= customer.email %>" type="text" name="email" ><br />
+  <input value="<%= customer.Phone %>" type="number" name="Phone" ><br />
+  <input value="<%= customer.Cellphone %>" type="number" name="Cellphone" ><br />
+  <input type="submit" value="Edit Customer" /> <br />
+</form>

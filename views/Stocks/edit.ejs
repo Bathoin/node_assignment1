@@ -1,0 +1,11 @@
+<form action="/Stocks/update/<%= Stocks.id %>" method= "POST">
+  <h2>Edit a Stock investment</h2>
+
+  <input value="<%= Stocks.Symbol %>" type="text" name="Symbol" ><br />
+  <input value="<%= Stocks.Name %>" type="text" name="Name" ><br />
+  <input value="<%= Stocks.Share_amount %>" type="text" name="Share_amount" ><br />
+  <input value="<%= Stocks.price %>" type="text" name="price" ><br />
+  <input value="<%= Stocks.Date_of_purchase %>" type="text" name="Date_of_purchase" ><br />
+
+  <input type="submit" value="Edit Stocks" /> <br />
+</form>

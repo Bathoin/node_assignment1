@@ -35,6 +35,25 @@ module.exports = {
 
       });
     });
+  },
+
+  edit: function(req,res,next){
+    Stocks.findOne(req.param('id'), function foundStocks(err, Stocks) {
+      if (err) return next(err);
+      if (!Stocks) return next();
+      res.view({
+        Stocks: Stocks
+      });
+    });
+  },
+
+  update : function (req, res, next) {
+    Stocks.update(req.param('id'), req.params.all(), function StocksUpdated(err){
+      if (err) {
+        return res.redirect('/Stocks/edit/' + req.param('id'));
+      }
+      res.redirect('/Stocks/show/' + req.param('id'));
+    })
   }
 
 
