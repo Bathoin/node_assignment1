@@ -54,6 +54,11 @@ module.exports = {
       }
       res.redirect('/Stocks/show/' + req.param('id'));
     })
+  },
+  destroy: function(req, res, next) {
+    Stocks.destroy(req.param('id')).exec(function () {
+      res.redirect('/Stocks/');
+    });
   }
 
 

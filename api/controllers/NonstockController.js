@@ -56,6 +56,11 @@ module.exports = {
       }
       res.redirect('/Nonstock/show/' + req.param('id'));
     })
+  },
+  destroy: function(req, res, next) {
+    Nonstock.destroy(req.param('id')).exec(function () {
+      res.redirect('/Nonstock/');
+    });
   }
 
 };
