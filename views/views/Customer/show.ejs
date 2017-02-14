@@ -1,0 +1,70 @@
+<h1><%= customer.name%></h1>
+<hr>
+<h3>Address: <%= customer.Address%></h3>
+<h3>City: <%= customer.City%></h3>
+<h3>State: <%= customer.State%></h3>
+<h3>Zip Code: <%= customer.Zipcode%></h3>
+<h3>Email: <%= customer.email%></h3>
+<h3>Phone Number: <%= customer.Phone%></h3>
+<h3>Cellphone: <%= customer.Cellphone%></h3>
+<hr>
+<h3>Stocks</h3>
+<table>
+  <tr>
+<th>Symbol</th>
+<th>Name</th>
+<th>Share_amount</th>
+<th>price</th>
+<th>Date_of_purchase</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% _.each(Customer.Stocks, function(Stocks) {%>
+  <tr data-id="<%= Stocks.id%>" data-model="Stocks" >
+    <td><%= Stocks.Symbol %></td>
+    <td><%= Stocks.Share_amount %></td>
+    <td></td>
+    <td><a href="/Customer/show/<%= Stocks.id%>">Show </a></td>
+    <td><a href="/Customer/edit/<%= Stocks.id%>">Edit </a></td>
+    <td><a href="/Customer/destroy/<%= Stocks.id%>">Destroy </a></td>
+  </tr>
+  <% }); %>%>
+</table>
+
+<form action="/Stocks/new" method="Post" >
+  <input type="hidden" value="<%= Customer.id %>" name="owner">
+  <input type="submit" value="Add Stocks" />
+</form>
+
+<hr>
+<h3>Non Stock</h3>
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Description</th>
+    <th>Avalue</th>
+    <th>Adate</th>
+    <th>Recent_value</th>
+    <th>Recent_date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% _.each(Customer.Stocks, function(Nonstock) {%>
+  <tr data-id="<%= Stocks.id%>" data-model="Nonstock" >
+    <td><%= Nonstock.Symbol %></td>
+    <td><%= Nonstock.Share_amount %></td>
+    <td></td>
+    <td><a href="/Customer/show/<%= Nonstock.id%>">Show </a></td>
+    <td><a href="/Customer/edit/<%= Nonstock.id%>">Edit </a></td>
+    <td><a href="/Customer/destroy/<%= Nonstock.id%>">Destroy </a></td>
+  </tr>
+  <% }); %>%>
+</table>
+<form action="/Nonstock/new" method="Post" >
+  <input type="hidden" value="<%= Customer.id %>" name="owner">
+  <input type="submit" value="Add Non Stock" />
+</form>

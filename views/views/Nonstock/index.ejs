@@ -1,0 +1,30 @@
+<h3>Non-Stock Investments</h3>
+<table>
+  <tr>
+    <th>Customer ID</th>
+    <th>Non-Stock ID</th>
+    <th>Category</th>
+    <th>Description</th>
+    <th>Acquired Value</th>
+    <th>Acquired Date</th>
+    <th>Recent Value</th>
+    <th>Recent Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% _.each(Nonstock, function(Nonstock)) { %>
+  <tr data-id="<%= Nonstock.id%>" data-model="Nonstock" >
+    <td> <%= Nonstock.id %></td>
+    <td> <%= Nonstock.Category %></td>
+    <td> <%= Nonstock.Description %></td>
+    <td> <%= Nonstock.Avalue %></td>
+    <td> <%= Nonstock.Adate %></td>
+    <td> <%= Nonstock.Recent_value %></td>
+    <td> <%= customer.Recent_date %></td>
+    <td><a href="/Nonstock/show/<%= Nonstock.id %>">Show</a></td>
+    <td><a href="/Nonstock/edit/<%= Nonstock.id %>">Edit</a></td>
+    <td><a href="/Nonstock/destroy/<%= Nonstock.id %>">Delete</a></td>
+  </tr>
+  <%  } %>
+</table>
