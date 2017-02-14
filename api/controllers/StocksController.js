@@ -16,13 +16,12 @@ module.exports = {
   create: function(req, res, next) {
     Stocks.create(req.params.all(), function StocksCreated(err, Stocks) {
       if (err) return next(err);
-      res.json(Stocks); // forward slash out if not needed
-      //res.redirect('/Stocks/show/' + Stocks.id);
+      res.redirect('/Customer/show/' + Stocks.owner);
     });
   },
 
   show: function(req, res, next) {
-    Stocks.findOne(req.param('id'), function foundStocks(err, Stocks) {
+    Stocks.findOne(req.param('id')).populateAll.exec( function(err, Stocks) {
       if (err) return next(err);
       if (!Stocks) return next();
       res.view({

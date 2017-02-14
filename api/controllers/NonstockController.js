@@ -23,7 +23,7 @@ module.exports = {
   },
 
   show: function(req, res, next) {
-    Nonstock.findOne(req.param('id'), function foundNonstock(err, Nonstock) {
+   Nonstock.findOne(req.param('id')).populateAll.exec( function(err, Nonstock) {
       if (err) return next(err);
       if (!Nonstock) return next();
       res.view({
