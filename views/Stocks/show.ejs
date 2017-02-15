@@ -6,3 +6,31 @@
 <h3>Recent Amount: <%= Stocks.Recent_value%></h3>
 <h3>Recent Price: <%= Stocks.Recent_date%></h3>
 
+<h3>Stocks</h3>
+<table>
+  <tr>
+    <th>Symbol</th>
+    <th>Name</th>
+    <th>Share_amount</th>
+    <th>price</th>
+    <th>Date_of_purchase</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% _.each(Customer.Stocks, function(Stocks) {%>
+  <tr data-id="<%= Stocks.id%>" data-model="Stocks" >
+    <td><%= Stocks.Symbol %></td>
+    <td><%= Stocks.Share_amount %></td>
+    <td></td>
+    <td><a href="/Customer/show/<%= Stocks.id%>">Show </a></td>
+    <td><a href="/Customer/edit/<%= Stocks.id%>">Edit </a></td>
+    <td><a href="/Customer/destroy/<%= Stocks.id%>">Destroy </a></td>
+  </tr>
+  <% }); %>%>
+</table>
+<form action="/Nonstock/new" method="Post" >
+  <input type="hidden" value="<%= Customer.id %>" name="owner">
+  <input type="submit" value="Add Stocks" />
+</form>

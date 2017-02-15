@@ -4,4 +4,33 @@
 <h3>Share Amount: <%= Nonstock.Share_amount%></h3>
 <h3>Purchase Price: <%= Nonstock.price%></h3>
 <h3>Date of Purchase: <%= Nonstock.Date_of_purchase%></h3>
+<hr>
+<h3>Non Stock</h3>
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Description</th>
+    <th>Avalue</th>
+    <th>Adate</th>
+    <th>Recent_value</th>
+    <th>Recent_date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
 
+  <% _.each(Customer.Stocks, function(Nonstock) {%>
+  <tr data-id="<%= Stocks.id%>" data-model="Nonstock" >
+    <td><%= Nonstock.Symbol %></td>
+    <td><%= Nonstock.Share_amount %></td>
+    <td></td>
+    <td><a href="/Customer/show/<%= Nonstock.id%>">Show </a></td>
+    <td><a href="/Customer/edit/<%= Nonstock.id%>">Edit </a></td>
+    <td><a href="/Customer/destroy/<%= Nonstock.id%>">Destroy </a></td>
+  </tr>
+  <% }); %>%>
+</table>
+<form action="/Nonstock/new" method="Post" >
+  <input type="hidden" value="<%= Customer.id %>" name="owner">
+  <input type="submit" value="Add Non Stock" />
+</form>
