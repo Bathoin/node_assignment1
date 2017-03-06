@@ -37,7 +37,8 @@ module.exports = {
         stocks_data = JSON.parse(webservice_data);
         stocks.current_price = stocks_data.LastPrice;
         console.log(stocks.symbol + ' = $' + stocks.current_price);
-        )};
+        callback();
+          )};
         };
 
       function get_current_price(stocks, callback){
@@ -60,7 +61,10 @@ module.exports = {
 
       };
 
-      async.each(customer.stocks, get_current_price)
+      async.each(customer.stocks, get_current_price, function(err){
+        if(err) console.log(err);
+
+      })
       customer.stocks.forEach(function(stocks){
       get_current_price(stocks);
         )}
