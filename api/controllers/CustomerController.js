@@ -63,6 +63,11 @@ module.exports = {
 
       async.each(customer.stocks, get_current_price, function(err){
         if(err) console.log(err);
+        console.log('done');
+
+        res.view({
+          customer: customer
+        });
 
       })
       customer.stocks.forEach(function(stocks){
