@@ -20,11 +20,60 @@ module.exports = {
         Customer.findOne(req.param('id')).populateAll.exec( function(err, customer) {
       if (err) return next(err);
       if (!customer) return next();
+
+      var http = require('http');
+
+      function process_response(webservice_response, stocks, callback) {
+        var webservice_data = "";
+        webservice_response.on('error', function(e) {
+        console.log(e.message);
+        callback("Error:" + e.message);
+        )};
+        webservice_response.on('data, function(chunk') {
+        webservice_data+= chunk;
+          )};
+
+        webservice_response.on('end', function() {
+        stocks_data = JSON.parse(webservice_data);
+        stocks.current_price = stocks_data.LastPrice;
+        console.log(stocks.symbol + ' = $' + stocks.current_price);
+        )};
+        };
+
+      function get_current_price(stocks, callback){
+        //http://dev.markitondemand.com/MODApis/api/v2/Quote/JSON?symbol=AAPL
+        console.log(stocks.symbol);
+        options = {
+          host: 'dev.markitondemand.com',
+          port: 80,
+          path: '/MODApis/Api/v2/Quote/JSON?symbol=' + stocks.symbol,
+          method: 'GET'
+        };
+
+        var webservice_request = http.request(options, function(response) {
+        process_response(response, stocks, callback)
+        )};
+
+        webservice_request.end();
+
+        console.log(stocks.symbol + ' = ' + stocks.current_price);
+
+      };
+
+      async.each(customer.stocks, get_current_price)
+      customer.stocks.forEach(function(stocks){
+      get_current_price(stocks);
+        )}
+
+
       res.view({
         customer: customer
       });
+
     });
-  },
+  });
+};
+},
 
   index: function(req, res, next) {
     Customer.find(function foundCustomers (err, customers) {
