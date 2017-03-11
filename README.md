@@ -2,9 +2,8 @@
 
 a [Sails](http://sailsjs.org) application
 
-// https://node-financial.herokuapp.com/
-//
-//
+ https://node-financial.herokuapp.com/
+
 Frameworks are now available for pretty much all programming languages. 
 Explain the value of a framework like Sails.js. 
 
@@ -31,4 +30,7 @@ Describe an application where a framework may not be appropriate.
 * A few applications that a framework is not appropriate is application that require second by second update, Application that deals with sensitive informationn (This usually is better off building by hand), and applications with specific additions into the application as specified by the boss/personn issuinng the request.
 
 Describe 3 things you learned from this assignment.
-* Three things I have learned is the process of using a version log to keep track of 
+* Three things I have learned is the process of using a version log to keep track of the app version I am working on. The second thing I have learned from the assignment is how to deploy the application I have created onto the internet via heroku. The Third thing I have learned is the value of the framework like sails.js. This assignment would have been alot longer had we been forced to code it via java.
+
+How could this assignment be improved?
+* I would say do some of the assignment in class as a demostration. Some of the concepts I had to implemennt, I still don't fully understand
